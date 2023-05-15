@@ -1,6 +1,7 @@
 # Movies Web
 
 A project college to display your favorite movies on your screen!
+You can check the project [here](https://web-movies-wine.vercel.app/).
 
 This is the most **badass** project you'll ever see.
 It has got so many **awesome** features such as:
@@ -15,5 +16,9 @@ That's why if you wanna get this **super awesome badass kick-arser project**, yo
 4. Finally, run ```yarn dev```
 
 Note: You'll need to fill the **VITE_THE_MOVIEDB_API_KEY** api key. You can check more information about how to get your own [here](https://developers.themoviedb.org/3/getting-started/introduction).
+After that:
+
+- Clone the `.env.template` file, and rename it to `.env`
+- Paste your API Key
 
 Happy coding! :)
