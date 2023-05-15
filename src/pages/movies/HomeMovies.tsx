@@ -15,6 +15,7 @@ import {
   nowPlayingService,
   searchMovieService,
 } from '~/services/movies/moviesServices';
+import CircularProgressIndicator from '~/components/loading/CircularProgressIndicator';
 
 const HomeMovies = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -60,7 +61,13 @@ const HomeMovies = () => {
         onSubmit={handleOnSubmit}
         onChange={(e) => setSearchValue(e)}
       />
-      <MovieGridDisplay movies={movies} />
+      <MovieGridDisplay
+        movies={movies}
+        emptyPlaceholder={{
+          show: movies.length === 0,
+          element: <CircularProgressIndicator />,
+        }}
+      />
     </MainLayout>
   );
 };

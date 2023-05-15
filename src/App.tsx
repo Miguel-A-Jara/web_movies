@@ -7,7 +7,13 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import MainAppRouter from '~/config/router/MainAppRouter';
 
 // We create a tanstack query client
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => {
   return (

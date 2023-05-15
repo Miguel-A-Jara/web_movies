@@ -8,7 +8,17 @@ const FavoriteMovies = () => {
 
   return (
     <MainLayout title='Tus favoritos'>
-      <MovieGridDisplay movies={localMovies} />
+      <MovieGridDisplay
+        emptyPlaceholder={{
+          show: localMovies.length === 0,
+          element: (
+            <h1 className='text-center text-white text-3xl font-bold'>
+              Agrega una película como favorita!
+            </h1>
+          ),
+        }}
+        movies={localMovies}
+      />
     </MainLayout>
   );
 };

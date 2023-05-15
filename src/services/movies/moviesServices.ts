@@ -1,6 +1,6 @@
 // Project
-import { NowPlaying } from './moviesModel';
 import { moviesAxios } from './moviesAxios';
+import { MovieByID, NowPlaying } from './moviesModel';
 
 export async function nowPlayingService() {
   const { data } = await moviesAxios.get<NowPlaying>('/movie/now_playing');
@@ -14,6 +14,12 @@ export async function searchMovieService(query: string) {
       include_adult: true,
     },
   });
+
+  return data;
+}
+
+export async function movieByID(movieID: number | string) {
+  const { data } = await moviesAxios.get<MovieByID>(`/movie/${movieID}`);
 
   return data;
 }

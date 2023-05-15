@@ -34,7 +34,7 @@ const MovieItem = ({ movie }: MovieItemProps) => {
           <Link to={urlToMovie}>{movie.title}</Link>
         </h3>
         <span className='text-white flex items-end'>
-          {movie.voteAverage}
+          {movie.voteAverage.toFixed(1)}
           <Star className='text-yellow-500' />
         </span>
       </div>

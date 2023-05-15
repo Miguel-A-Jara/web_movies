@@ -1,6 +1,7 @@
-import noPosterFound from '~/assets/no_poster.png';
+// Project
 import { Movie } from '~/entities/movie';
-import { NowPlayingMovie } from './moviesModel';
+import noPosterFound from '~/assets/no_poster.png';
+import { MovieByID, NowPlayingMovie } from './moviesModel';
 
 const IMAGE_BASE = 'https://image.tmdb.org/t/p/w500';
 
@@ -32,6 +33,23 @@ export function searchedMovieToMovie(searchedRes: NowPlayingMovie): Movie {
     adult: searchedRes.adult,
     voteAverage: searchedRes.vote_average,
     description: searchedRes.overview,
+    image: movieImage,
+  };
+
+  return movie;
+}
+
+export function movieByIdToMovie(movieByIdResponse: MovieByID): Movie {
+  const movieImage = movieByIdResponse.poster_path
+    ? `${IMAGE_BASE}${movieByIdResponse.poster_path}`
+    : noPosterFound;
+
+  const movie: Movie = {
+    id: movieByIdResponse.id,
+    title: movieByIdResponse.title,
+    adult: movieByIdResponse.adult,
+    voteAverage: movieByIdResponse.vote_average,
+    description: movieByIdResponse.overview ?? 'Descripción no disponible.',
     image: movieImage,
   };
 

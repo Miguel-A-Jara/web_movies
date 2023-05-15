@@ -4,6 +4,7 @@ import { Home, Favorite } from '@mui/icons-material';
 import Navbar from '~/components/navbars/Navbar';
 import { NavbarItemProps } from './navbars/NavbarItem';
 import { MAIN_APP_ROUTES } from '~/config/router/mainRoutes';
+import changePageTitle from '~/config/utils/changePageTitle';
 
 const navbarItems: NavbarItemProps[] = [
   {
@@ -20,10 +21,13 @@ const navbarItems: NavbarItemProps[] = [
 
 interface MainLayoutProps {
   title: string;
+  pageTitle?: string;
   children: JSX.Element | JSX.Element[];
 }
 
-const MainLayout = ({ children, title }: MainLayoutProps) => {
+const MainLayout = ({ children, title, pageTitle }: MainLayoutProps) => {
+  changePageTitle(pageTitle ?? title);
+
   return (
     <main className='relative bg-indigo-800 min-h-screen'>
       <Navbar items={navbarItems} />
