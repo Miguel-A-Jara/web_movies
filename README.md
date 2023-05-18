@@ -1,24 +1,20 @@
 # Movies Web
 
-A project college to display your favorite movies on your screen!
-You can check the project [here](https://web-movies-wine.vercel.app/).
+Un proyecto de la clase 466 de la **Universidad Autónoma de Asunción**.
+Gracias a este proyecto puedes buscar tus películas favoritas todo en un sólo lugar!
+Puedes echarle un ojo a la página aquí [here](https://web-movies-wine.vercel.app/).
 
-This is the most **badass** project you'll ever see.
-It has got so many **awesome** features such as:
+Si quieres levantar el proyecto localmente debes de:
 
-- _Coming soon..._
+1. Clonar el repositorio.
+2. Ingresar a la carpeta del proyecto: ```cd web_movies```
+3. Correr ```yarn install``` (_yarn 1.22.x_ recomendado)
+4. Por último, corre ```yarn dev```
 
-That's why if you wanna get this **super awesome badass kick-arser project**, you have to:
+Nota: Para levantar el proyecto, necesitas de un API KEY de TheMovieDb. Puedes ver más información sobre como obtener tu propia API KEY [aquí](https://developers.themoviedb.org/3/getting-started/introduction)
 
-1. Clone the repo.
-2. ```cd web_movies```
-3. Run ```yarn install```
-4. Finally, run ```yarn dev```
+Luego de haber obtenido tu API KEY, sigue estos pasos:
 
-Note: You'll need to fill the **VITE_THE_MOVIEDB_API_KEY** api key. You can check more information about how to get your own [here](https://developers.themoviedb.org/3/getting-started/introduction).
-After that:
-
-- Clone the `.env.template` file, and rename it to `.env`
-- Paste your API Key
-
-Happy coding! :)
+- Clona el archivo `.env.template`, y renombralo a `.env`
+- Ingresa tu API KEY en el archivo de .env luego de `VITE_THE_MOVIEDB_API_KEY=`
+- Reinicia tu servidor de desarrollo, y listo!
